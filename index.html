@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Valentine’s Week ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== BASIC RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #12001a, #000);
+  color: #fff;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* ===== HEADING ===== */
+.main-heading {
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: normal;
+  text-shadow: 0 0 15px rgba(255,0,120,0.6);
+}
+
+.sub-heading {
+  margin-top: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* ===== MUSIC BUTTON ===== */
+.music-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+}
+
+/* ===== SLIDESHOW ===== */
+.slideshow {
+  width: 90%;
+  max-width: 350px;
+  height: 420px;
+  margin: 20px auto 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 25px rgba(255,0,120,0.4);
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: fadeSlide 100s infinite;
+}
+
+/* Set delay for each of the 10 images */
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 10s; }
+.slideshow img:nth-child(3) { animation-delay: 20s; }
+.slideshow img:nth-child(4) { animation-delay: 30s; }
+.slideshow img:nth-child(5) { animation-delay: 40s; }
+.slideshow img:nth-child(6) { animation-delay: 50s; }
+.slideshow img:nth-child(7) { animation-delay: 60s; }
+.slideshow img:nth-child(8) { animation-delay: 70s; }
+.slideshow img:nth-child(9) { animation-delay: 80s; }
+.slideshow img:nth-child(10){ animation-delay: 90s; }
+
+@keyframes fadeSlide {
+  0% {opacity: 0;}
+  5% {opacity: 1;}
+  15% {opacity: 1;}
+  20% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+/* ===== DAY BUTTONS ===== */
+.day {
+  margin: 25px auto;
+  width: 90%;
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  cursor: pointer;
+}
+
+.day h2 {
+  font-size: 22px;
+}
+
+/* ===== LETTER BOX ===== */
+.letter {
+  display: none;
+  margin-top: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.6);
+  animation: fadeIn 1.5s ease;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(15px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* ===== LOCKED TEXT ===== */
+.locked {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 8px;
+}
+
+/* ===== FIREFLIES ===== */
+.firefly {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fff;
+  animation: move 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes move {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADING -->
+<h1 class="main-heading">Happy Valentine’s Week ❤️</h1>
+<p class="sub-heading">A small corner of the internet made only for you</p>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<div class="music-btn" onclick="toggleMusic()">🎵 Play Music</div>
+
+<!-- SLIDESHOW -->
+<div class="slideshow">
+  <img src="img1.jpg">
+  <img src="img2.jpg">
+  <img src="img3.jpg">
+  <img src="images/img4.jpg">
+  <img src="images/img5.jpg">
+  <img src="images/img6.jpg">
+  <img src="images/img7.jpg">
+  <img src="images/img8.jpg">
+  <img src="images/img9.jpg">
+  <img src="images/img10.jpg">
+</div>
+
+<!-- ===== DAYS / LETTERS ===== -->
+<div class="day" data-date="2026-02-07" onclick="toggleLetter(this)">
+  <h2>🌹 Rose Day</h2>
+  <div class="locked">opens on rose day (07-02-26)</div>
+  <div class="letter" id="roseLetter">
+    Just like a rose, you quietly became the most beautiful part of my life.
+You came without noise, without force, and yet you changed everything around me.
+<p>Your presence adds color to my dull days, softness to my tired heart, and a calm that I didn’t even know I was missing.
+There are moments when I smile for no reason, and later I realize — it was you on my mind.</p>
+If love had a fragrance, it would smell like you, gentle yet unforgettable.
+And just like a rose, even your thorns feel worth holding onto, because loving you makes everything feel alive.
+  </div>
+</div>
+
+<div class="day" data-date="2026-02-08" onclick="toggleLetter(this)">
+  <h2>💍 Propose Day</h2>
+  <div class="locked">Opens on Propose Day (08-02-26)</div>
+  <div class="letter" id="proposeLetter">
+    I don’t need perfect words or perfect timing.
+My heart already knows its answer — it’s you. Today and always.
+I choose you not just on easy days, but also on the days when things feel heavy and confusing.
+<p>Distance, time, silence — none of it scares me as much as the thought of a life without you in it.
+This isn’t just a proposal, it’s a quiet promise from my heart that says: wherever life takes us, I want it to be with you.
+Not because it’s perfect, but because it’s real.</p>
+  </div>
+</div>
+
+<div class="day" data-date="2026-02-09" onclick="toggleLetter(this)">
+  <h2>💌 Promise Day</h2>
+  <div class="locked">Opens on Promise Day(09-02-26}</div>
+  <div class="letter" id="promiseLetter">
+    I promise patience, honesty, and a love that never runs away.
+Even when words fail, even when situations get hard, my intentions for you will always stay pure.
+<p>I promise to listen when you speak and to understand even when you stay silent.
+To stand beside you, not just in happiness, but also when things feel uncertain.
+I can’t promise a flawless journey, but I promise a loyal heart that keeps choosing you — again, and again, and again.</p>
+  </div>
+</div>
+
+<div class="day" data-date="2026-02-12" onclick="toggleLetter(this)">
+  <h2>🤗 Hug Day</h2>
+  <div class="locked">Opens on Hug Day (12-02-26)</div>
+  <div class="letter" id="hugLetter">
+    If I were there, I’d hug you tight enough to make the world feel quiet.
+No words, no explanations — just a moment where everything feels safe.
+That hug would say all the things my voice sometimes can’t:
+that you’re not alone, that you’re cared for, that you’re deeply loved.
+Until the day I can actually wrap my arms around you, let this be my invisible hug — warm, steady, and always meant just for you.
+  </div>
+</div>
+
+<div class="day" data-date="2026-02-13" onclick="toggleLetter(this)">
+  <h2>😘 Kiss Day</h2>
+  <div class="locked">Opens on Kiss Day (13-02-25)</div>
+  <div class="letter" id="kissLetter">
+    <p>Baby, today is Kiss Day, and I just want you to know how every thought of you makes me ache for your lips. Even in distance, I feel every kiss as if it’s already been shared between us.</p>
+
+<p>Your smile, your touch, your laugh… they stay with me all day, and I wish I could freeze time just to hold you close. Every kiss we share—even in dreams—feels like a promise, a whisper of everything I feel for you.</p>
+
+<p>So today, know that my heart is yours completely. I love you endlessly, and every kiss we share brings me closer to forever. 💖</p>
+  </div>
+</div>
+
+<div class="day" data-date="2026-02-14" onclick="toggleLetter(this)">
+  <h2>❤️ Valentine’s Day</h2>
+  <div class="locked">Opens on Valentine’s Day(14-02-26)</div>
+  <div class="letter" id="valentineLetter">
+     Until the distance ends, this is my way of holding you.
+Through words, through effort, through a small space on the internet that carries a very big feeling.
+<p>One day, this screen won’t be needed.
+One day, these letters will turn into memories we smile at together.
+But till that day comes, know this — my heart has already found its place with you.
+And on this Valentine’s Day, and every day after, it’s still you. Always you.</p>
+  </div>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+/* MUSIC */
+const music = document.getElementById("music");
+let playing = false;
+function toggleMusic() {
+  if (!playing) {
+    music.play();
+    playing = true;
+  } else {
+    music.pause();
+    playing = false;
+  }
+}
+
+/* DATE LOCK + TAP */
+function toggleLetter(dayElem) {
+  const letter = dayElem.querySelector('.letter');
+  const lockedText = dayElem.querySelector('.locked');
+  const unlockDate = new Date(dayElem.dataset.date);
+  unlockDate.setHours(0,0,0,0);
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  if(today >= unlockDate){
+    letter.style.display = letter.style.display === "block" ? "none" : "block";
+    if(lockedText) lockedText.style.display = "none";
+  } else {
+    alert("This letter will open on its special day ❤️");
+  }
+}
+
+/* AUTO UNLOCK */
+document.querySelectorAll('.day').forEach(day => {
+  const letter = day.querySelector('.letter');
+  const lockedText = day.querySelector('.locked');
+  const unlockDate = new Date(day.dataset.date);
+  unlockDate.setHours(0,0,0,0);
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  if(today >= unlockDate){
+    if(letter) letter.style.display = 'none';
+    if(lockedText) lockedText.style.display = 'none';
+  } else {
+    if(letter) letter.style.display = 'none';
+    if(lockedText) lockedText.style.display = 'block';
+  }
+});
+
+/* FIREFLIES */
+for (let i = 0; i < 25; i++) {
+  const f = document.createElement("div");
+  f.className = "firefly";
+  f.style.left = Math.random() * 100 + "vw";
+  f.style.animationDuration = 10 + Math.random() * 20 + "s";
+  f.style.opacity = Math.random();
+  document.body.appendChild(f);
+}
+</script>
+
+</body>
+</html>
